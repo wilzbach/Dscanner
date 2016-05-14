@@ -153,4 +153,7 @@ struct StaticAnalysisConfig
 
 	@INI("Check for trailing whitespace")
 	string trailing_whitespace_check = Check.disabled;
+
+	@INI("Check for two or more consecutive empty lines")
+	string consecutive_empty_lines = Check.disabled;
 }
