@@ -63,6 +63,7 @@ import analysis.auto_function;
 import analysis.allman;
 import analysis.trailing_whitespace;
 import analysis.consecutive_empty_lines;
+import analysis.space_between_operators;
 
 import dsymbol.string_interning : internString;
 import dsymbol.scope_;
@@ -369,6 +370,10 @@ MessageSet analyze(string fileName, const Module m, const StaticAnalysisConfig a
     if (analysisConfig.consecutive_empty_lines != Check.disabled)
 		checks ~= new ConsecutiveEmptyLines(fileName, code,
         analysisConfig.consecutive_empty_lines == Check.skipTests && !ut);
+
+    if (analysisConfig.space_between_operators != Check.disabled)
+		checks ~= new SpaceBetweenOperators(fileName, code,
+        analysisConfig.space_between_operators == Check.skipTests && !ut);
 
 	if (analysisConfig.auto_function_check != Check.disabled)
 		checks ~= new AutoFunctionChecker(fileName,

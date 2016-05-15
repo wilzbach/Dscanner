@@ -156,4 +156,7 @@ struct StaticAnalysisConfig
 
 	@INI("Check for two or more consecutive empty lines")
 	string consecutive_empty_lines = Check.disabled;
+
+	@INI("Enforce space between operators")
+	string space_between_operators = Check.disabled;
 }
