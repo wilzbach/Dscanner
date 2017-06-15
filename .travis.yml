@@ -12,5 +12,8 @@ os:
 env:
   - BUILD=
   - BUILD=dub
+matrix:
+  allow_failures:
+  - dmd-nightly
 
 script: ./.travis.sh
